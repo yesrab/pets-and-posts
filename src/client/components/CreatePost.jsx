@@ -27,6 +27,9 @@ export async function action({ params, request }) {
     headers: { "Content-Type": "application/json" },
   });
   const postThePost = await fetch(newRequest);
+  if (postThePost.status === 200) {
+    location.reload();
+  }
   return null;
 }
 function CreatePost() {

@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "../../components/Post";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 import CreatePost from "../../components/CreatePost";
 import { useLoaderData } from "react-router-dom";
 export async function loader() {
@@ -11,14 +11,17 @@ export async function loader() {
 }
 function HomeFeed() {
   const data = useLoaderData();
+  const isMobile = useBreakpointValue({ base: true, sm: false });
   // console.log(data);
   return (
-    <Grid p={10} templateColumns='repeat(2, 1fr)'>
+    <Grid p={10} templateColumns={["1fr", "1fr", "1fr 1fr"]}>
       <CreatePost />
       <Grid
         justifyItems={"end"}
         p={5}
-        templateColumns={["repeat(1, 1fr)"]}
+        templateColumns={
+          isMobile ? "1fr" : ["repeat(1, 1fr)", "repeat(1, 1fr)"]
+        }
         gap={6}>
         {data || data.length > 0
           ? data.map((item) => {

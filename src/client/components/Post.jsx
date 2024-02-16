@@ -26,7 +26,7 @@ export default function Post({ data }) {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
   return (
     <Card
-      maxH={isAccordionOpen || data.Post.length > 200 ? "none" : "250px"}
+      maxH={isAccordionOpen || data.Post.length > 200 ? "none" : "350px"}
       w='100%'>
       <CardHeader>
         <Flex spacing='4'>
