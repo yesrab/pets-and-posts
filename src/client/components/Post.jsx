@@ -15,7 +15,6 @@ import {
   Accordion,
   AccordionItem,
   AccordionPanel,
-  Textarea,
   Spacer,
 } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";

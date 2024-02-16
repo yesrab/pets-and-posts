@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "../../components/Post";
-import { Box, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
+import { Grid, useBreakpointValue } from "@chakra-ui/react";
 import CreatePost from "../../components/CreatePost";
 import { useLoaderData } from "react-router-dom";
 export async function loader() {
